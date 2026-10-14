@@ -3,11 +3,11 @@ name: Hello CI
 on: [push]
 
  jobs:
-   say_hello:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get the project files
-          uses: actions/checkout@v4
+  say_hello:
+   runs-on: ubuntu-latest
+    steps:
+     - name: Get the project files
+      uses: actions/checkout@v4
 
-          - name: Print a meessage
-            run: echo "Hello, world my firstpipeline!"
+       - name: Print a meessage
+        run: echo "Hello, world my   firstpipeline!"
