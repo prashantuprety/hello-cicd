@@ -1,6 +1,6 @@
 name: Hello CI
 
- on: [push]
+on: [push]
 
  jobs:
    say_hello:
