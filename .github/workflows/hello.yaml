@@ -2,7 +2,7 @@ name: Hello CI
 
 on: [push]
 
- jobs:
+jobs:
   say_hello:
    runs-on: ubuntu-latest
     steps:
