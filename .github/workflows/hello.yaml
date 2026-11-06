@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+    paths: 'hello.yaml'
 
 jobs: 
   send_email:
@@ -14,7 +15,7 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          secure: true
+          secure: true 
 
           username: ${{secrets.MAIL_USERNAME}}
 
