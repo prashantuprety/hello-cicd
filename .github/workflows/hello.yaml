@@ -1,13 +1,33 @@
-name: Hello CI
+name: Push email notification
 
-on: 
-  schedule:
-    - cron: '29 16 * * *'
+on:
+  push:
+    branches:
+      - main
 
-jobs:
-  say_hello:
-   runs-on: ubuntu-latest
-   steps:
+jobs: 
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
 
-    - name: Print a meessage
-      run: echo "Hello, world my shedule   firstpipeline!"
+          username: ${{secrets.MAIL_USERNAME}}
+
+          password: ${{secrets.MAIL_PASSWORD}}
+
+          subject: "New github push"
+          to: prashantuprety157@gmail.com
+          from: GitHub Actions
+
+          body: |
+            Hello!
+            A new push was made in your repo: ${{github.repository}}
+            Branch: ${{github.ref_name}}
+            Commit: ${{github.sha}}
+
+          
