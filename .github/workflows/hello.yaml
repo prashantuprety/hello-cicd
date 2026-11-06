@@ -22,7 +22,7 @@ jobs:
 
           subject: "New github push"
           to: prashantuprety157@gmail.com
-          from: GitHub Actions
+          from: GitHub  Actions
 
           body: |
             Hello!
